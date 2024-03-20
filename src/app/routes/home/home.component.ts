@@ -68,7 +68,6 @@ export class HomeComponent {
 			opacity: [0, 1],
 			translateY: [10, 0],
 			rotate: ['15deg', '-5deg'],
-			delay: 750,
 			duration: 250,
 			easing: 'easeOutBack',
 			changeBegin: () => {
