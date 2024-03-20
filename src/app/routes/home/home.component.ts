@@ -19,35 +19,35 @@ export class HomeComponent {
 		});
 
 		anime({
-			targets: [
-				'.social-link-pixiv',
-				'.social-link-x',
-				'.social-link-instagram',
-				'.social-link-mail',
-			],
-			opacity: [0, 1],
-			delay: anime.stagger(100, { start: 1700 }),
-			easing: 'easeOutCubic',
-		});
-
-		anime({
 			targets: '.main-page-carousel',
 			opacity: [0, 1],
 			scale: [1.05, 1],
 			filter: ['blur(.5rem)', 'blur(0rem)'],
-			delay: 3000,
+			delay: 1700,
 			duration: 1000,
 			easing: 'easeOutQuad',
 			complete: () => {
 				anime({
 					targets: '.main-page-carousel',
-					backgroundPosition: ['50% 0%', '50% 100%'],
+					backgroundPosition: ['0% 50%', '100% 50%'],
 					duration: 90000,
 					direction: 'alternate',
 					loop: true,
-					easing: 'easeInOutQuad',
+					easing: 'linear',
 				});
 			},
+		});
+
+		anime({
+			targets: [
+				'.social-link-pixiv-container',
+				'.social-link-x-container',
+				'.social-link-instagram-container',
+				'.social-link-mail-container',
+			],
+			opacity: [0, 1],
+			delay: anime.stagger(100, { start: 3000 }),
+			easing: 'easeOutCubic',
 		});
 	}
 
