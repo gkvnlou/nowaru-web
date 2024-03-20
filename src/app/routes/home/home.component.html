@@ -1,0 +1,96 @@
+<div class="flex h-screen w-screen">
+	<div
+		class="main-page-carousel fixed h-screen w-screen scale-[1] overflow-hidden bg-[url('assets/main-bg.png')] bg-cover bg-top bg-no-repeat"
+	></div>
+	<div class="absolute flex h-full w-full items-center justify-center">
+		<div>
+			<img
+				class="logo h-[250px] w-[250px] object-contain p-[1rem]"
+				src="assets/logo-vertical-stylized-color.png"
+			/>
+		</div>
+	</div>
+	<div
+		class="absolute bottom-[5rem] flex w-full justify-center gap-[3rem] p-[1rem]"
+	>
+		<div class="relative flex items-center justify-center">
+			<a
+				class="rounded bg-[rgba(255,255,255,.7)] p-[.25rem] transition-all hover:bg-white"
+				href="https://www.pixiv.net/en/users/36809573"
+				target="_blank"
+				(pointerenter)="socialLinkEnterAnimation('social-link-pixiv')"
+				(pointerleave)="socialLinkLeaveAnimation('social-link-pixiv')"
+			>
+				<img
+					class="social-link-pixiv h-[30px] w-[30px] object-contain"
+					src="assets/social-link/pixiv.svg"
+				/>
+			</a>
+			<div
+				class="social-link-pixiv-tooltip absolute bottom-[3rem] hidden w-max rounded bg-black p-[.25rem] text-white"
+			>
+				pixiv.net/en/users/36809573
+			</div>
+		</div>
+
+		<div class="relative flex items-center justify-center">
+			<a
+				class="rounded bg-[rgba(255,255,255,.7)] p-[.25rem] transition-all hover:bg-white"
+				href="https://x.com/NowaruArt"
+				target="_blank"
+				(pointerenter)="socialLinkEnterAnimation('social-link-x')"
+				(pointerleave)="socialLinkLeaveAnimation('social-link-x')"
+			>
+				<img
+					class="social-link-x h-[30px] w-[30px] object-contain"
+					src="assets/social-link/x.svg"
+				/>
+			</a>
+			<div
+				class="social-link-x-tooltip absolute bottom-[3rem] hidden rounded bg-black p-[.25rem] text-white"
+			>
+				&#64;nowaruart
+			</div>
+		</div>
+
+		<div class="relative flex items-center justify-center">
+			<a
+				class="rounded bg-[rgba(255,255,255,.7)] p-[.25rem] transition-all hover:bg-white"
+				href="https://www.instagram.com/nowaruart/"
+				target="_blank"
+				(pointerenter)="socialLinkEnterAnimation('social-link-instagram')"
+				(pointerleave)="socialLinkLeaveAnimation('social-link-instagram')"
+			>
+				<img
+					class="social-link-instagram h-[30px] w-[30px] object-contain"
+					src="assets/social-link/instagram.svg"
+				/>
+			</a>
+			<div
+				class="social-link-instagram-tooltip absolute bottom-[3rem] hidden rounded bg-black p-[.25rem] text-white"
+			>
+				&#64;nowaruart
+			</div>
+		</div>
+
+		<div class="relative flex items-center justify-center">
+			<a
+				class="rounded bg-[rgba(255,255,255,.7)] p-[.25rem] transition-all hover:bg-white"
+				href="mailto://gkvnlou@nowaru.com"
+				target="_blank"
+				(pointerenter)="socialLinkEnterAnimation('social-link-mail')"
+				(pointerleave)="socialLinkLeaveAnimation('social-link-mail')"
+			>
+				<img
+					class="social-link-mail h-[30px] w-[30px] object-contain"
+					src="assets/social-link/mail.svg"
+				/>
+			</a>
+			<div
+				class="social-link-mail-tooltip absolute bottom-[3rem] hidden rounded bg-black p-[.25rem] text-white"
+			>
+				gkvnlou&#64;nowaru.com
+			</div>
+		</div>
+	</div>
+</div>
