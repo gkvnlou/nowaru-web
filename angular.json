@@ -79,19 +79,19 @@
 				"serve": {
 					"builder": "@angular-devkit/build-angular:dev-server",
 					"configurations": {
-						"production": {
-							"browserTarget": "nowaru-web:build:production"
+            "production": {
+              "buildTarget": "nowaru-web:build:production"
 						},
-						"development": {
-							"browserTarget": "nowaru-web:build:development"
+            "development": {
+              "buildTarget": "nowaru-web:build:development"
 						}
 					},
 					"defaultConfiguration": "development"
 				},
 				"extract-i18n": {
 					"builder": "@angular-devkit/build-angular:extract-i18n",
-					"options": {
-						"browserTarget": "nowaru-web:build"
+          "options": {
+            "buildTarget": "nowaru-web:build"
 					}
 				},
 				"test": {

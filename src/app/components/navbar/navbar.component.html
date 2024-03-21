@@ -1,0 +1,58 @@
+<div
+	class="fixed flex h-[5rem] w-full items-center justify-between backdrop-blur"
+>
+	<div class="flex flex-[1] items-center justify-start p-[3rem]">
+		<img class="h-full w-[15rem]" src="assets/navbar/navbar-logo.png" />
+	</div>
+	<div class="relative flex flex-[1] justify-end p-[1rem]">
+		<ul class="menu menu-horizontal bg-base-200 rounded-box">
+			<li class="dropdown dropdown-end">
+				<a tabindex="0" role="button" class="">Pages</a>
+				<ul
+					tabindex="0"
+					class="menu menu-sm dropdown-content bg-base-100 rounded-box right-0 z-[1] mt-[1rem] flex w-[15rem] flex-col gap-[.5rem] p-2 shadow"
+				>
+					<li class="h-[]"><a>Home</a></li>
+					<li><a>Personal Details</a></li>
+				</ul>
+			</li>
+			<li class="dropdown dropdown-end">
+				<a tabindex="1" role="button" class="">Project</a>
+				<ul
+					tabindex="1"
+					class="menu menu-sm dropdown-content bg-base-100 rounded-box right-0 z-[1] mt-[1rem] flex w-[30rem] flex-col gap-[.5rem] p-2 shadow"
+				>
+					<li>
+						<a
+							class="navbar-gallery flex h-[5rem] items-end justify-start overflow-hidden bg-[url('assets/navbar/navbar-gallery.jpg')] bg-cover bg-left p-0"
+							(mouseenter)="startNavbarAnimation('navbar-gallery')"
+							(mouseleave)="stopNavbarAnimation('navbar-gallery')"
+						>
+							<div
+								class="bg-gradient flex h-full w-[75%] flex-col items-start justify-end text-nowrap bg-gradient-to-r from-[#0077ff] to-transparent p-[.5rem]"
+							>
+								<div class="text-3xl font-bold text-white">Gallery</div>
+								<div class="text-slate-100">Collection of my artwork</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a
+							class="disabled relative flex items-end justify-start overflow-hidden p-0"
+						>
+							<div
+								class="bg-gradient flex h-full w-full items-end text-nowrap bg-[#FF7700] p-[.5rem] font-bold text-white opacity-50"
+							>
+								Keyboard
+							</div>
+							<span
+								class="badge badge-neutral absolute start-[5rem] self-center bg-gradient-to-br from-[#0077ff] to-[#ff0077] text-white"
+								>Coming soon!</span
+							>
+						</a>
+					</li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</div>

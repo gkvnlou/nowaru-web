@@ -33,7 +33,7 @@ export class HomeComponent {
 					duration: 90000,
 					direction: 'alternate',
 					loop: true,
-					easing: 'easeOutCubic',
+					easing: 'easeInOutSine',
 				});
 			},
 		});
@@ -48,6 +48,14 @@ export class HomeComponent {
 			opacity: [0, 1],
 			delay: anime.stagger(100, { start: 3000 }),
 			easing: 'easeOutCubic',
+		});
+
+		anime({
+			targets: '.wip-lol',
+			filter: ['hue-rotate(0deg)', 'hue-rotate(359deg)'],
+			duration: 120000,
+			loop: true,
+			easing: 'linear',
 		});
 	}
 
