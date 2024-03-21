@@ -33,7 +33,7 @@ export class HomeComponent {
 					duration: 90000,
 					direction: 'alternate',
 					loop: true,
-					easing: 'linear',
+					easing: 'easeOutCubic',
 				});
 			},
 		});
