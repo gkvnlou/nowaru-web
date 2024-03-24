@@ -26,16 +26,15 @@ export class HomeComponent {
 			delay: 1700,
 			duration: 1000,
 			easing: 'easeOutQuad',
-			complete: () => {
-				anime({
-					targets: '.main-page-carousel',
-					backgroundPosition: ['0% 50%', '100% 50%'],
-					duration: 90000,
-					direction: 'alternate',
-					loop: true,
-					easing: 'easeInOutSine',
-				});
-			},
+		});
+
+		anime({
+			targets: '.main-page-carousel',
+			backgroundPosition: ['0% 50%', '100% 50%'],
+			duration: 60000,
+			direction: 'alternate',
+			loop: true,
+			easing: 'linear',
 		});
 
 		anime({
@@ -53,7 +52,7 @@ export class HomeComponent {
 		anime({
 			targets: '.wip-lol',
 			filter: ['hue-rotate(0deg)', 'hue-rotate(359deg)'],
-			duration: 120000,
+			duration: 60000,
 			loop: true,
 			easing: 'linear',
 		});
