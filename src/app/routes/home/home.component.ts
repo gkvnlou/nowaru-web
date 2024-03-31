@@ -36,16 +36,16 @@ export class HomeComponent {
 
 	logoLoadConcluded() {
 		this.isSplashLogoLoaded = true;
-		if (!this.isBackgroundLoaded) {
-			anime.remove('.logo');
-			anime({
-				targets: '.logo',
-				scale: [1.5, 1],
-				opacity: [0, 1],
-				duration: 1000,
-				easing: 'easeOutCubic',
-			});
-		}
+		// if (!this.isBackgroundLoaded) {
+		anime.remove('.logo');
+		anime({
+			targets: '.logo',
+			scale: [1.5, 1],
+			opacity: [0, 1],
+			duration: 1000,
+			easing: 'easeOutCubic',
+		});
+		// }
 	}
 
 	backgroundLoadConcluded() {
