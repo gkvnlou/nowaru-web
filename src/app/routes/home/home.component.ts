@@ -7,36 +7,12 @@ import anime from 'animejs/lib/anime.es';
 	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+	isSplashLogoLoaded: boolean = false;
+	isBackgroundLoaded: boolean = false;
+
 	constructor() {}
 
 	ngOnInit() {
-		anime({
-			targets: '.logo',
-			scale: [1.5, 1],
-			opacity: [0, 1],
-			duration: 1700,
-			easing: 'easeOutQuad',
-		});
-
-		anime({
-			targets: '.main-page-carousel',
-			opacity: [0, 1],
-			scale: [1.05, 1],
-			filter: ['blur(.5rem)', 'blur(0rem)'],
-			delay: 1700,
-			duration: 1000,
-			easing: 'easeOutQuad',
-		});
-
-		anime({
-			targets: '.main-page-carousel',
-			backgroundPosition: ['0% 50%', '100% 50%'],
-			duration: 60000,
-			direction: 'alternate',
-			loop: true,
-			easing: 'linear',
-		});
-
 		anime({
 			targets: [
 				'.social-link-pixiv-container',
@@ -53,6 +29,75 @@ export class HomeComponent {
 			targets: '.wip-lol',
 			filter: ['hue-rotate(0deg)', 'hue-rotate(359deg)'],
 			duration: 60000,
+			loop: true,
+			easing: 'linear',
+		});
+	}
+
+	logoLoadConcluded() {
+		this.isSplashLogoLoaded = true;
+		if (!this.isBackgroundLoaded) {
+			anime.remove('.logo');
+			anime({
+				targets: '.logo',
+				scale: [1.5, 1],
+				opacity: [0, 1],
+				duration: 1000,
+				easing: 'easeOutCubic',
+			});
+		}
+	}
+
+	backgroundLoadConcluded() {
+		this.isBackgroundLoaded = true;
+		anime.remove(['.main-page-carousel']);
+		// anime({
+		// 	targets: '.logo',
+		// 	keyframes: [
+		// 		{
+		// 			scale: this.isSplashLogoLoaded ? 1 : [1.5, 1],
+		// 			opacity: 1,
+		// 			duration: 1000,
+		// 		},
+		// 		{
+		// 			opacity: 0,
+		// 			delay: 500,
+		// 			duration: 500,
+		// 		},
+		// 	],
+		// 	easing: 'easeOutCubic',
+		// });
+
+		anime({
+			targets: '.main-page-carousel',
+			opacity: [0, 1],
+			scale: [1.05, 1],
+			filter: ['blur(.5rem)', 'blur(0rem)'],
+			duration: 1000,
+			delay: 1700,
+			easing: 'easeOutQuad',
+		});
+
+		anime({
+			targets: '.main-page-carousel',
+			keyframes: [
+				{
+					objectPosition: ['0% 50%', '5% 50%'],
+					easing: 'easeInQuad',
+					duration: 6000, // 10% of total time
+				},
+				{
+					objectPosition: ['5% 50%', '95% 50%'],
+					easing: 'linear',
+					duration: 48000, // 80% of total time
+				},
+				{
+					objectPosition: ['95% 50%', '100% 50%'],
+					easing: 'easeOutQuad',
+					duration: 6000, // 10% of total time
+				},
+			],
+			direction: 'alternate',
 			loop: true,
 			easing: 'linear',
 		});
