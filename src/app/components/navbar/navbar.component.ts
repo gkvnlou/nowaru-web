@@ -9,6 +9,8 @@ import anime from 'animejs/lib/anime.es';
 	styleUrl: './navbar.component.scss',
 })
 export class NavbarComponent {
+	constructor() {}
+
 	ngOnInit() {}
 
 	startNavbarAnimation(target: string) {

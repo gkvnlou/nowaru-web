@@ -1,72 +1,55 @@
 import { Component } from '@angular/core';
 import anime from 'animejs/lib/anime.es';
+import { NavbarComponent } from '../../components/navbar/navbar.component';
 
 @Component({
 	selector: 'app-home',
+	standalone: true,
+	imports: [NavbarComponent],
 	templateUrl: './home.component.html',
 	styleUrls: ['./home.component.scss'],
 })
 export class HomeComponent {
+	constructor() {}
+
 	isSplashLogoLoaded: boolean = false;
 	isBackgroundLoaded: boolean = false;
 
-	constructor() {}
-
-	ngOnInit() {
-		anime({
-			targets: [
-				'.social-link-pixiv-container',
-				'.social-link-x-container',
-				'.social-link-instagram-container',
-				'.social-link-mail-container',
-			],
-			opacity: [0, 1],
-			delay: anime.stagger(100, { start: 3000 }),
-			easing: 'easeOutCubic',
-		});
-
-		anime({
-			targets: '.wip-lol',
-			filter: ['hue-rotate(0deg)', 'hue-rotate(359deg)'],
-			duration: 60000,
-			loop: true,
-			easing: 'linear',
-		});
-	}
+	ngOnInit() {}
 
 	logoLoadConcluded() {
 		this.isSplashLogoLoaded = true;
-		// if (!this.isBackgroundLoaded) {
-		anime.remove('.logo');
-		anime({
-			targets: '.logo',
-			scale: [1.5, 1],
-			opacity: [0, 1],
-			duration: 1000,
-			easing: 'easeOutCubic',
-		});
-		// }
+		if (!this.isBackgroundLoaded) {
+			anime.remove('.logo');
+			anime({
+				targets: '.logo',
+				scale: [1.5, 1],
+				opacity: [0, 1],
+				duration: 1000,
+				easing: 'easeOutCubic',
+			});
+		}
 	}
 
 	backgroundLoadConcluded() {
 		this.isBackgroundLoaded = true;
-		anime.remove(['.main-page-carousel']);
-		// anime({
-		// 	targets: '.logo',
-		// 	keyframes: [
-		// 		{
-		// 			scale: this.isSplashLogoLoaded ? 1 : [1.5, 1],
-		// 			opacity: 1,
-		// 			duration: 1000,
-		// 		},
-		// 		{
-		// 			opacity: 0,
-		// 			delay: 500,
-		// 			duration: 500,
-		// 		},
-		// 	],
-		// 	easing: 'easeOutCubic',
-		// });
+		anime.remove(['.logo', '.main-page-carousel']);
+		anime({
+			targets: '.logo',
+			keyframes: [
+				{
+					scale: this.isSplashLogoLoaded ? 1 : [1.5, 1],
+					opacity: 1,
+					duration: 1000,
+				},
+				{
+					opacity: 0,
+					delay: 500,
+					duration: 500,
+				},
+			],
+			easing: 'easeOutCubic',
+		});
 
 		anime({
 			targets: '.main-page-carousel',
